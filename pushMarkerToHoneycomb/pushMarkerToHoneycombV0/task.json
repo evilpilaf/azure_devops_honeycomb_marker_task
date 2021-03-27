@@ -1,0 +1,70 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "ae4e2d4b-60b6-42fd-980e-0d8787bb4627",
+    "name": "pushMarkerToHoneycomb",
+    "friendlyName": "Push marker to Honeycomb",
+    "description": "Pushes a marker to the Honeycomb dataset with the value set by the caller",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "evilpilaf",
+    "version": {
+        "Major": 0,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Echo $(samplestring)",
+    "inputs": [
+        {
+            "name": "datasetName",
+            "label": "Dataset",
+            "required": true,
+            "type": "string",
+            "groupName": "Dataset"
+        },
+        {
+            "name": "teamId",
+            "label": "Team Id",
+            "required": true,
+            "type": "string",
+            "helpMarkDown": "The team id (api key), must have the rights to create Markers",
+            "groupName": "Dataset"
+        },
+        {
+            "name": "marker",
+            "label": "Marker",
+            "required": true,
+            "type": "string",
+            "groupName": "Marker"
+        },
+        {
+            "name": "startTime",
+            "label": "Start Time",
+            "type": "int",
+            "required": false,
+            "helpMarkDown": "Indicates the time the Marker should be placed. If missing, defaults to the time the request arrives at the API. Expressed in Unix Time, aka seconds since the epoch",
+            "groupName": "Marker"
+        },
+        {
+            "name": "endTime",
+            "label": "End Time",
+            "type": "int",
+            "required": false,
+            "defaultValue": "",
+            "helpMarkDown": "Specifying end time will allow you to record a Marker representing a time range, such as a 5 minute deploy. This range will be highlighted when rendering a graph. Expressed in Unix Time, aka seconds since the epoch",
+            "groupName": "Marker"
+        },
+        {
+            "name": "type",
+            "label": "Type",
+            "type": "string",
+            "required": true,
+            "helpMarkDown": "A string grouping similar Markers, eg ‘deploys’. All Markers of the same type will appear in the same color on the graph",
+            "groupName": "Marker"
+        }
+    ],
+    "execution": {
+        "Node": {
+            "target": "index.js"
+        }
+    }
+}
