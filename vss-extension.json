@@ -1,0 +1,55 @@
+{
+    "manifestVersion": 1,
+    "id": "pushMarkerToHoneycomb",
+    "name": "Push marker to Honeycomb",
+    "publisher": "evilpilaf",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "categories": [
+        "Azure Pipelines",
+        "Observability",
+        "Insights",
+        "Telemetry",
+        "Open Telemetry"
+    ],
+    "tags": [
+        "honeycomb",
+        "telemetry",
+        "observability",
+        "insights",
+        "otel",
+        "opentelemetry"
+    ],
+    "links": {
+        "learn": {
+            "uri": "https://docs.honeycomb.io/api/markers/"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/evilpilaf/azure_devops_honeycomb_marker_task"
+    },
+    "icons": {
+        "default": "extension-icon.png"
+    },
+    "files": [
+        {
+            "path": "pushMarkerToHoneycomb"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "PushMarkerToHoneycomb",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "PushMarkerToHoneycomb"
+            }
+        }
+    ]
+}
