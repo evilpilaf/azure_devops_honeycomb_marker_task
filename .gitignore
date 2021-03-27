@@ -114,3 +114,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+/pushMarkerToHoneycomb/pushMarkerToHoneycomb*/*
+!/pushMarkerToHoneycomb/pushMarkerToHoneycomb*/index.ts
+!/pushMarkerToHoneycomb/pushMarkerToHoneycomb*/task.json
+!/pushMarkerToHoneycomb/pushMarkerToHoneycomb*/package.json
+!/pushMarkerToHoneycomb/pushMarkerToHoneycomb*/package-lock.json
+!/pushMarkerToHoneycomb/pushMarkerToHoneycomb*/package.json
